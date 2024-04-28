@@ -1,12 +1,38 @@
 const express = require('express');
 const router = express.Router();
 
+let data = [
+	{
+		postTitle: 'java',
+		postSubTitle: 'java programlama',
+		image: 'assets/img/about-bg.jpg',
+	},
+	{
+		postTitle: 'python',
+		postSubTitle: 'java programlama',
+		image: 'assets/img/about-bg.jpg',
+	},
+	{
+		postTitle: 'html',
+		postSubTitle: 'java programlama',
+		image: 'assets/img/about-bg.jpg',
+	},
+];
+
 router.get('/', (req, res) => {
-	res.render('home');
+	res.render('home', { data: data }); //ilki ejs tarafindan alinacak isim ikincisi burdan verdigimiz
 });
 
 router.get('/about/', (req, res) => {
-	res.send('about sayfasi');
+	res.render('about');
+});
+
+router.get('/contact', (req, res) => {
+	res.render('contact');
+});
+
+router.get('/signin', (req, res) => {
+	res.render('admin/signin');
 });
 
 module.exports = router;
