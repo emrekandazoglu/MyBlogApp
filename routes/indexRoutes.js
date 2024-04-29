@@ -31,8 +31,8 @@ router.get('/contact', (req, res) => {
 	res.render('contact');
 });
 
-router.get('/signin', (req, res) => {
-	res.render('admin/signin');
+router.get('/resume', (req, res) => {
+	res.end('resume page');
 });
 
 module.exports = router;
